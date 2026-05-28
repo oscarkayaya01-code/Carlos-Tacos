@@ -13,7 +13,8 @@ public class Main {
 
 
         while(true) {
-        System.out.println("homeScreen");
+            System.out.println("Welcome to Carlos Tacos");
+        System.out.println("HomeScreen");
         System.out.println("1. New Order");
         System.out.println("0. Exit");
 
@@ -120,10 +121,10 @@ public class Main {
         //public Taco(String shell, int size, String meat, String cheese, ArrayList<String> toppings, String sauce, ArrayList<String> sides)
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("1. shell1");
-        System.out.println("2. shell2");
-        System.out.println("3. shell3");
-        System.out.println("4. shell4");
+        System.out.println("1. Corn");
+        System.out.println("2. Flour");
+        System.out.println("3. Hard Shell");
+        System.out.println("4. Bowl");
         String shellchoice = scanner.nextLine();
 
         System.out.println("1. Single");
@@ -144,26 +145,26 @@ public class Main {
                 break;
         }
 
-        System.out.println("1. meat1");
-        System.out.println("2. meat2");
-        System.out.println("3. meat3");
-        System.out.println("4. meat4");
-        System.out.println("5. meat5");
-        System.out.println("6. meat6");
+        System.out.println("1. Carne asada");
+        System.out.println("2. Al pastor");
+        System.out.println("3. Carnitas");
+        System.out.println("4. Pollo");
+        System.out.println("5. Chorizo");
+        System.out.println("6. Pescado");
         String meatchoice = scanner.nextLine();
 
-        System.out.println("1. cheese1");
-        System.out.println("2. cheese2");
-        System.out.println("3. cheese3");
-        System.out.println("4. cheese4");
+        System.out.println("1. Queso Fresco");
+        System.out.println("2. Oaxaca");
+        System.out.println("3. Cotija");
+        System.out.println("4. Cheddar");
         String cheesechoice = scanner.nextLine();
 
-        System.out.println("1. sauce1");
-        System.out.println("2. sauce2");
-        System.out.println("3. sauce3");
-        System.out.println("4. sauce4");
-        System.out.println("5. sauce5");
-        System.out.println("6. sauce6");
+        System.out.println("1. Salsa verde");
+        System.out.println("2. Salsa roja");
+        System.out.println("3. Chipotle");
+        System.out.println("4. habanero");
+        System.out.println("5. mild");
+        System.out.println("6. extra hot");
         String saucechoice = scanner.nextLine();
 
 

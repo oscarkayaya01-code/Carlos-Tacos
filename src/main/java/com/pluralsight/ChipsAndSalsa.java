@@ -2,7 +2,7 @@ package com.pluralsight;
 
 public class ChipsAndSalsa {
 
-    private final double price = 1.50;
+    private final double PRICE = 1.50;
     private String salsa;
 
     public ChipsAndSalsa(String salsa) {
@@ -10,7 +10,7 @@ public class ChipsAndSalsa {
     }
 
     public double getPrice() {
-        return price;
+        return PRICE;
     }
 
     public String getSalsa() {
@@ -19,5 +19,10 @@ public class ChipsAndSalsa {
 
     public void setSalsa(String salsa) {
         this.salsa = salsa;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Chips & Salsa (%s) — $%.2f", salsa, PRICE);
     }
 }
