@@ -1,7 +1,6 @@
-package com.pluralsight;
+package com.pluralsight.models;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Order {
 

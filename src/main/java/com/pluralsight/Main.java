@@ -1,6 +1,7 @@
 package com.pluralsight;
 
-import java.sql.SQLOutput;
+import com.pluralsight.models.*;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
