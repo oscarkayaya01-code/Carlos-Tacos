@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Taco {
 
     private String shell;
-    private int size;
+    private TacoSize size;
     private String meat;
     private String cheese;
     private ArrayList<String> toppings;
@@ -13,7 +13,7 @@ public class Taco {
     private ArrayList<String> sides;
 
 
-    public Taco(String shell, int size, String meat, String cheese, ArrayList<String> toppings, String sauce, ArrayList<String> sides) {
+    public Taco(String shell, TacoSize size, String meat, String cheese, ArrayList<String> toppings, String sauce, ArrayList<String> sides) {
         this.shell = shell;
         this.size = size;
         this.meat = meat;
@@ -31,11 +31,11 @@ public class Taco {
         this.shell = shell;
     }
 
-    public int getSize() {
+    public TacoSize getSize() {
         return size;
     }
 
-    public void setSize(int size) {
+    public void setSize(TacoSize size) {
         this.size = size;
     }
 
