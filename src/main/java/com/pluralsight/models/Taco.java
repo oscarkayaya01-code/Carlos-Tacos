@@ -43,26 +43,67 @@ public class Taco {
         return price;
     }
 
-    public ShellType getShell()                          { return shell; }
-    public void setShell(ShellType shell)                { this.shell = shell; }
-    public TacoSize getSize()                            { return size; }
-    public void setSize(TacoSize size)                   { this.size = size; }
-    public String getMeat()                              { return meat; }
-    public void setMeat(String meat)                     { this.meat = meat; }
-    public int getExtraMeatCount()                       { return extraMeatCount; }
-    public void setExtraMeatCount(int extraMeatCount)    { this.extraMeatCount = extraMeatCount; }
-    public String getCheese()                            { return cheese; }
-    public void setCheese(String cheese)                 { this.cheese = cheese; }
-    public int getExtraCheeseCount()                     { return extraCheeseCount; }
-    public void setExtraCheeseCount(int c)               { this.extraCheeseCount = c; }
-    public ArrayList<Toppings> getToppings()             { return toppings; }
-    public void setToppings(ArrayList<Toppings> toppings){ this.toppings = toppings; }
-    public String getSauce()                             { return sauce; }
-    public void setSauce(String sauce)                   { this.sauce = sauce; }
-    public ArrayList<Sides> getSides()                   { return sides; }
-    public void setSides(ArrayList<Sides> sides)         { this.sides = sides; }
-    public boolean isCovered()                           { return covered; }
-    public void setCovered(boolean covered)              { this.covered = covered; }
+    public ShellType getShell(){
+        return shell;
+    }
+    public void setShell(ShellType shell){
+        this.shell = shell;
+    }
+    public TacoSize getSize(){
+        return size;
+    }
+    public void setSize(TacoSize size){
+        this.size = size;
+    }
+    public String getMeat(){
+        return meat;
+    }
+    public void setMeat(String meat){
+        this.meat = meat;
+    }
+    public int getExtraMeatCount(){
+        return extraMeatCount;
+    }
+    public void setExtraMeatCount(int extraMeatCount){
+        this.extraMeatCount = extraMeatCount;
+    }
+    public String getCheese(){
+        return cheese;
+    }
+    public void setCheese(String cheese){
+        this.cheese = cheese;
+    }
+    public int getExtraCheeseCount(){
+        return extraCheeseCount;
+    }
+    public void setExtraCheeseCount(int c){
+        this.extraCheeseCount = c;
+    }
+    public ArrayList<Toppings> getToppings(){
+        return toppings;
+    }
+    public void setToppings(ArrayList<Toppings> toppings){
+        this.toppings = toppings;
+    }
+    public String getSauce(){
+        return sauce;
+    }
+    public void setSauce(String sauce){
+        this.sauce = sauce;
+    }
+    public ArrayList<Sides> getSides(){
+        return sides;
+    }
+    public void setSides(ArrayList<Sides> sides){
+        this.sides = sides;
+    }
+    public boolean isCovered(){
+        return covered;
+    }
+
+    public void setCovered(boolean covered){
+        this.covered = covered;
+    }
 
     @Override
     public String toString() {

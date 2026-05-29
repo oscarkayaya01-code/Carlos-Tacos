@@ -22,6 +22,8 @@ public enum DrinkSize {
     }
 
     @Override
-    public String toString() { return displayName; }
+    public String toString() {
+        return displayName;
+    }
 }
 

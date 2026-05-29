@@ -3,6 +3,7 @@ package com.pluralsight.models;
 import java.util.ArrayList;
 
 public class StreetTaco extends Taco {
+
     public StreetTaco() {
         super(ShellType.CORN, TacoSize.THREE_TACO,
                 "Carne Asada", 0,
