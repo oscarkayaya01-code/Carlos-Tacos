@@ -1,14 +1,16 @@
 package com.pluralsight;
 
 import com.pluralsight.models.*;
+import com.pluralsight.util.ReceiptWriter;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    static void main() {
+    public static void main(String[] args) {
 
         Order order = new Order();
 
@@ -34,7 +36,8 @@ public class Main {
 
 
     }
-    public static void showMenu(Order order){
+    public static void showMenu(Order order) {
+        ReceiptWriter rw = new ReceiptWriter();
 
         while(true) {
             System.out.println("Order Screen");
@@ -60,6 +63,8 @@ public class Main {
                     break;
                 case "4":
                     System.out.println("Checkout");
+                    System.out.println(order.toString());
+                    System.out.println(rw.writeReceipt(order));
                     break;
                 case "0":
                     return;
@@ -90,8 +95,6 @@ public class Main {
         System.out.println("1. Small");
         System.out.println("2. Meduim");
         System.out.println("3. Large");
-
-
         Scanner scanner = new Scanner(System.in);
         String sizechoice = scanner.nextLine();
         DrinkSize sizeEnum = DrinkSize.SMALL;
@@ -108,8 +111,10 @@ public class Main {
         }
 
         System.out.println("what flavor do you want");
+        System.out.println("1. Flavor1");
+        System.out.println("2. Flavor2");
+        System.out.println("3. Flavor3");
         String flavorchoice = scanner.nextLine();
-
 
 
         Drink drink = new Drink(sizeEnum, flavorchoice);
@@ -127,6 +132,23 @@ public class Main {
         System.out.println("3. Hard Shell");
         System.out.println("4. Bowl");
         String shellchoice = scanner.nextLine();
+        String shellname = "";
+
+        switch(shellchoice){
+
+            case "1":
+                shellname = "Corn";
+                break;
+            case "2":
+                shellname = "Flour";
+                break;
+            case "3":
+                shellname = "Hard shell";
+                break;
+            case "4":
+                shellname = "bowl";
+                break;
+        }
 
         System.out.println("1. Single");
         System.out.println("2. 3 tacos");
@@ -153,6 +175,30 @@ public class Main {
         System.out.println("5. Chorizo");
         System.out.println("6. Pescado");
         String meatchoice = scanner.nextLine();
+        String meatname = "";
+
+        switch(meatchoice){
+
+            case "1":
+                meatname = "Carne asada";
+                break;
+            case "2":
+                meatname = "Al pastor";
+                break;
+            case "3":
+                meatname = "Carnitas";
+                break;
+            case "4":
+                meatname = "Pollo";
+                break;
+            case "5":
+                meatname = "Chorizo";
+                break;
+            case "6":
+                meatname = "Pescado";
+                break;
+
+        }
 
         System.out.println("1. Queso Fresco");
         System.out.println("2. Oaxaca");
@@ -170,12 +216,74 @@ public class Main {
 
 
         // ArrayList toppings choices
+        ArrayList<Toppings> toppings = new ArrayList<>();
+
+        boolean toppingMenu = true;
+        while (toppingMenu){
+
+            System.out.println("What toppings would you like?");
+            System.out.println("1. topping1");
+            System.out.println("2. topping2");
+            System.out.println("3. topping3");
+            System.out.println("4. topping4");
+            System.out.println("5. topping5");
+            System.out.println("6. topping6");
+            System.out.println("1. topping7");
+            System.out.println("2. topping8");
+            System.out.println("3. topping9");
+            String toppingchoice = scanner.nextLine();
+
+            toppings.add(new Toppings(toppingchoice));
+
+            System.out.println("Would you like more toppings");
+            System.out.println("1. Yes");
+            System.out.println("2. No");
+            String continuechoice = scanner.nextLine();
+
+            switch(continuechoice){
+
+                case "1":
+                    break;
+                case "2":
+                    toppingMenu = false;
+                    break;
+            }
+        }
+
         // Arraylist sides choices
+        ArrayList<Sides> sides = new ArrayList<>();
+
+        boolean sidesMenu = true;
+        while (sidesMenu) {
+
+            System.out.println("What sides would you like?");
+            System.out.println("1. sides1");
+            System.out.println("2. side2");
+
+            String sideschoice = scanner.nextLine();
+
+            sides.add(new Sides(sideschoice));
+
+            System.out.println("Would you like more sides");
+            System.out.println("1. Yes");
+            System.out.println("2. No");
+            String continuechoiceS = scanner.nextLine();
+
+            switch(continuechoiceS){
+
+                case "1":
+                    break;
+                case "2":
+                    sidesMenu = false;
+                    break;
+            }
+        }
+
 
 
         //public Taco(String shell, int size, String meat, String cheese, ArrayList<String> toppings, String sauce, ArrayList<String> sides)
-        ArrayList<String> temp = new ArrayList<>();
-        Taco taco = new Taco(shellchoice, sizeEnum, meatchoice, cheesechoice,temp,saucechoice, temp );
+
+        Taco taco = new Taco(shellname, sizeEnum, meatname, cheesechoice,toppings,saucechoice, sides );
         ArrayList<Taco> current = order.getTaco();
         current.add(taco);
         order.setTaco(current);

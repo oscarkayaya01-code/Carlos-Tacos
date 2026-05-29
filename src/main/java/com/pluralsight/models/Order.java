@@ -19,7 +19,20 @@ public class Order {
     public Order(){};
 
     public double getPrice() {
-        return price;
+        double total = 0.00;
+        for(Taco t: this.getTaco()){
+            total += t.getSize().getBasePrice();
+        };
+        for(ChipsAndSalsa c: this.getChipsAndSalsas()){
+
+           total += c.getPrice();
+        };
+        for(Drink d: this.getDrinks()){
+
+           total += d.getPrice();
+        };
+
+        return total;
     }
 
     public void setPrice(double price) {
@@ -49,4 +62,23 @@ public class Order {
     public void setTaco(ArrayList<Taco> taco) {
         this.taco = taco;
     }
+
+    @Override
+    public String toString(){
+        String orderString = "";
+        for(Taco t: this.getTaco()){
+
+            orderString = orderString + t.toString() + "\n";
+        };
+        for(ChipsAndSalsa c: this.getChipsAndSalsas()){
+
+            orderString = orderString + c.toString()+ "\n";
+        };
+        for(Drink d: this.getDrinks()){
+
+            orderString = orderString + d.toString()+ "\n";
+        };
+        orderString = orderString +  "Total    " + String.format("$%.2f",getPrice());
+        return orderString;
+    };
 }

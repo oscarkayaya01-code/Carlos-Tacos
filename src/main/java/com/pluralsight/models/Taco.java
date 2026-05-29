@@ -8,12 +8,12 @@ public class Taco {
     private TacoSize size;
     private String meat;
     private String cheese;
-    private ArrayList<String> toppings;
+    private ArrayList<Toppings> toppings;
     private String sauce;
-    private ArrayList<String> sides;
+    private ArrayList<Sides> sides;
 
 
-    public Taco(String shell, TacoSize size, String meat, String cheese, ArrayList<String> toppings, String sauce, ArrayList<String> sides) {
+    public Taco(String shell, TacoSize size, String meat, String cheese, ArrayList<Toppings> toppings, String sauce, ArrayList<Sides> sides) {
         this.shell = shell;
         this.size = size;
         this.meat = meat;
@@ -55,11 +55,11 @@ public class Taco {
         this.meat = meat;
     }
 
-    public ArrayList<String> getToppings() {
+    public ArrayList<Toppings> getToppings() {
         return toppings;
     }
 
-    public void setToppings(ArrayList<String> toppings) {
+    public void setToppings(ArrayList<Toppings> toppings) {
         this.toppings = toppings;
     }
 
@@ -71,11 +71,16 @@ public class Taco {
         this.sauce = sauce;
     }
 
-    public ArrayList<String> getSides() {
+    public ArrayList<Sides> getSides() {
         return sides;
     }
 
-    public void setSides(ArrayList<String> sides) {
+    public void setSides(ArrayList<Sides> sides) {
         this.sides = sides;
+    }
+
+   // public Taco(String shell, TacoSize size, String meat, String cheese, ArrayList<Toppings> toppings, String sauce, ArrayList<Sides> sides)
+    public String toString(){
+        return String.format("%s %s %s %s %s - $%.2f", shell, size.getDisplayName(), meat, cheese, sauce,size.getBasePrice());
     }
 }

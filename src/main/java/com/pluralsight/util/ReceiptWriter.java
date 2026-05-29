@@ -16,7 +16,7 @@ public class ReceiptWriter {
     private static final DateTimeFormatter FORMATTER =
             DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss");
 
-    public static String writeReceipt(Order order) throws IOException {
+    public String writeReceipt(Order order) {
         // Create receipts folder if it doesn't exist
         File dir = new File(RECEIPTS_DIR);
         if (!dir.exists()) dir.mkdirs();
@@ -26,6 +26,9 @@ public class ReceiptWriter {
 
         try (FileWriter writer = new FileWriter(file)) {
             writer.write(order.toString());
+        } catch (IOException ioException){
+
+            System.out.println("error");
         }
 
         return file.getPath();
