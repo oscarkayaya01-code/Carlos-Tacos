@@ -17,12 +17,13 @@ public class Drink {
     public String getFlavor() {
         return flavor;
     }
-    
-    public String toString(){
-        return String.format("%s %s drink - $%.2f", size, flavor, getPrice());
-    }
 
     public double getPrice() {
         return size.getPrice();
+    }
+    
+    @Override
+    public String toString(){
+        return String.format("%s %s drink - $%.2f", size, flavor, getPrice());
     }
 }
